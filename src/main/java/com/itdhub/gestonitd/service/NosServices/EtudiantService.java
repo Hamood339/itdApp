@@ -1,6 +1,6 @@
 package com.itdhub.gestonitd.service.NosServices;
 
-import com.itdhub.gestonitd.domain.classes.Etudiant;
+import com.itdhub.gestonitd.domain.NosClasses.Etudiant;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.stereotype.Service;
