@@ -3,8 +3,6 @@
     <span class="hipster img-fluid rounded"></span>
   </div>
 
-  <h1>{{ infos.message }}</h1>
-
   <div class="col-md-9">
     <h1 class="display-4"><span jhiTranslate="home.title">Bienvenue, Java Hipster !</span> (Gestionitd)</h1>
 
@@ -37,6 +35,21 @@
       }
     </div>
 
+    <fieldset>
+      <form>
+        Prenom:<input type="text" placeholder="saisir votre Prenom" ngModel required /> <br />
+        Nom: <input type="text" placeholder="saisir votre Nom" ngModel required /><br />
+        Adresse: <input type="text" placeholder="saisir votre Adresse" ngModel required /><br />
+        Email: <input type="email" placeholder="saisir votre Email" ngModel required /><br />
+        <button type="submit" (click)="addEtudiant()">submit</button><br />
+      </form>
+    </fieldset>
+    <fieldset>
+      {{ infos.prenom }}
+      {{ infos.nom }}
+      {{ infos.adresse }}
+      {{ infos.email }}
+    </fieldset>
     <p jhiTranslate="home.question">Si vous avez des questions à propos de JHipster :</p>
 
     <ul>

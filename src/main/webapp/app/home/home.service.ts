@@ -7,12 +7,18 @@ import { Observable } from 'rxjs';
 })
 export class HomeService {
   url: any;
+  urladd: any;
 
   constructor(private httpClient: HttpClient) {
     this.url = 'http://localhost:8080/etudiant';
+    this.urladd = 'http://localhost:8080/etudiant';
   }
 
-  etudiant(): Observable<object | null> {
+  getEtudiant(): Observable<object | null> {
     return this.httpClient.get(this.url);
+  }
+
+  addEtudiant(): Observable<Object | null> {
+    return this.httpClient.get(this.urladd);
   }
 }

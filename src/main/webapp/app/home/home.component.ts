@@ -43,7 +43,11 @@ export default class HomeComponent implements OnInit, OnDestroy {
     this.destroy$.complete();
   }
 
-  etudiant(): void {
-    this.homeService.etudiant().subscribe(infos => (this.infos = infos));
+  getEtudiant(): void {
+    this.homeService.getEtudiant().subscribe(infos => (this.infos = infos));
+  }
+
+  addEtudiant(): void {
+    this.homeService.addEtudiant().subscribe(infos => (this.infos = infos));
   }
 }
