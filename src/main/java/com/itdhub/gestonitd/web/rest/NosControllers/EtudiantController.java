@@ -15,27 +15,27 @@ public class EtudiantController {
     @Autowired
     private EtudiantService etudiantService;
 
-    @RequestMapping("/etudiant")
+    @GetMapping("/api/etudiant")
     public List<Etudiant> getEtudiant() {
         return etudiantService.getEtudiant();
     }
 
-    @RequestMapping(method = GET, value = "/etudiant/{id}")
+    @GetMapping("/api/etudiant/{id}")
     public Etudiant getStudentById(@PathVariable long id) {
         return etudiantService.getById(id);
     }
 
-    @RequestMapping(method = DELETE, value = "/etudiant/{id}")
+    @DeleteMapping("/api/etudiant/{id}")
     public void deleteEtudiant(@PathVariable long id) {
         etudiantService.deleteEtudiantById(id);
     }
 
-    @RequestMapping(method = POST, value = "/etudiant")
+    @PostMapping("/api/etudiant")
     public void addEtudiant(@RequestBody Etudiant etudiant) {
         etudiantService.addEtudiant();
     }
 
-    @RequestMapping(method = PUT, value = "/etudiant/{id}")
+    @PutMapping("/api/etudiant/{id}")
     public void updateEtudiant(@RequestBody Etudiant etudiant, @PathVariable long id) {
         etudiantService.updateEtudiant(etudiant, id);
     }

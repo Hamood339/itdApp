@@ -13,18 +13,18 @@ public class CertifsController {
     @Autowired
     private CertifsService certifsService;
 
-    @RequestMapping("/certifs")
+    @GetMapping("/api/certifs")
     public List<Certifications> getCertifs() {
         certifsService.getCertifs();
         return getCertifs();
     }
 
-    @RequestMapping(method = RequestMethod.POST, value = "/certifs")
+    @PostMapping("/api/certifs")
     public void addCertifs(@RequestBody Certifications certifs) {
         certifsService.addCertifsByName();
     }
 
-    @RequestMapping(method = RequestMethod.PUT, value = "/certifs/{name}")
+    @PutMapping("/api/certifs/{name}")
     public void updateCertifs(@RequestBody Certifications certifications, @PathVariable String name) {
         certifsService.updateCertifs(certifications, name);
     }

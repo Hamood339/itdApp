@@ -11,10 +11,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class EtudiantService {
 
-    @Autowired
-    private EtudiantRepository etudiantRepository;
-
     Etudiant etudiant = new Etudiant();
+
+    @Autowired
+    EtudiantRepository etudiantRepository;
 
     private static ArrayList<Etudiant> etudiants = new ArrayList<>(
         Arrays.asList(
@@ -38,7 +38,7 @@ public class EtudiantService {
     }
 
     public void addEtudiant() {
-        etudiantRepository.save(etudiant);
+        //etudiantRepository.save(etudiant);
         etudiants.add(etudiant);
     }
 
